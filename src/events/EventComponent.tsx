@@ -11,9 +11,17 @@ const EventComponent: React.FC = () => {
     console.log("i am clicked", e);
   };
 
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("i am submitted", e);
+  };
+
   return (
     <div>
-      <input onChange={onChange} />
+      <form onSubmit={onSubmit}>
+        <input onChange={onChange} />
+        <button>Submit</button>
+      </form>
       <div draggable onDragStart={onDragStart}>
         Drage Me
       </div>
